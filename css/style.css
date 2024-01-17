@@ -1,0 +1,362 @@
+/* Fonts - START */
+
+@font-face {
+  font-family: "Labil Grotesk";
+  font-weight: 500;
+  src: url(../font/LabilGrotesk-Bold.ttf);
+}
+@font-face {
+  font-family: "Labil Grotesk";
+  font-weight: 400;
+  src: url(../font/LabilGrotesk-Medium.ttf);
+}
+@font-face {
+  font-family: "Labil Grotesk";
+  font-weight: 300;
+  src: url(../font/LabilGrotesk-Regular.ttf);
+}
+@font-face {
+  font-family: "Labil Grotesk";
+  font-weight: 200;
+  src: url(../font/LabilGrotesk-Light.ttf);
+}
+@font-face {
+  font-family: "Labil Grotesk";
+  font-weight: 100;
+  src: url(../font/LabilGrotesk-Thin.ttf);
+}
+
+/* Fonts - END */
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Labil Grotesk";
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#header .logo {
+  width: fit-content;
+  margin-block: 15px;
+}
+
+#header .logo img {
+  max-width: 70px;
+}
+
+.navbar ul {
+  padding: 5px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  border-radius: 50px;
+  background: black;
+}
+
+.navbar ul li a {
+  color: #c4c4c4;
+  padding: 10px 20px;
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.navbar ul li:hover a:not(.active) {
+  color: white;
+}
+
+.navbar ul li:hover .count {
+  background: white;
+}
+
+.navbar a.active {
+  border-radius: 50px;
+  background: white;
+  color: black;
+}
+
+.navbar .count {
+  padding: 4px 4px 6px 4px;
+  background: #c4c4c4;
+  color: black;
+  font-size: 12px;
+  border-radius: 50%;
+  transition: all 0.5s;
+  margin-right: 3px;
+}
+
+.hero-section h2 {
+  width: fit-content;
+  margin: 100px auto 100px 0;
+  text-align: left;
+  font-size: 130px;
+  line-height: 0.8;
+}
+
+.page-container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.hero-section .top {
+  position: relative;
+}
+
+.hero-section .scroll {
+  text-transform: uppercase;
+  color: black;
+  position: absolute;
+  right: 0;
+  bottom: -30px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+}
+
+@keyframes bounce2 {
+  0%,
+  10%,
+  20%,
+  30%,
+  40%,
+  50%,
+  60%,
+  70%,
+  80%,
+  90%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-10px);
+  }
+  40% {
+    transform: translateY(-8px);
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+  80% {
+    transform: translateY(-4px);
+  }
+}
+
+.hero-section .scroll img {
+  width: 25px;
+  height: 25px;
+  -webkit-animation: bounce2 3s ease infinite;
+  animation: bounce2 3s ease infinite;
+}
+
+.hero-section .scroll p {
+  margin: 0;
+}
+
+.hero-section .bottom {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.hero-section .bottom .part:nth-child(1) a {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .bottom .part:nth-child(1) a img {
+  margin-right: 10px;
+  position: absolute;
+  left: -50px;
+  transition: all 0.3s;
+}
+
+.hero-section .bottom .part:nth-child(1) a:hover img {
+  left: 0;
+}
+
+.hero-section .bottom .part:nth-child(1) a div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  color: black;
+  margin-left: 0;
+  transition: all 0.3s;
+}
+
+.hero-section .bottom .part:nth-child(1) a:hover div {
+  margin-left: 30px;
+}
+
+.hero-section .bottom .part:nth-child(2) {
+  width: 40%;
+}
+
+.hero-section .bottom .part:nth-child(2) span {
+  font-weight: 300;
+}
+
+.projects {
+  margin-top: 100px;
+}
+
+.projects .heading {
+  width: 40%;
+}
+
+.projects .heading p {
+  font-weight: 300;
+}
+
+.projects-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.single-project {
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+  border-radius: 25px;
+}
+
+.single-project::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, black 0%, transparent 100%);
+  opacity: 0;
+  transition: all 1.5s;
+}
+
+.single-project:hover::after {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.single-project:hover > img {
+  scale: 1.2;
+}
+
+.single-project > img {
+  transition: all 1.5s;
+}
+
+.single-project .onhover {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  transition: all 1s;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-inline: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.single-project:hover .onhover {
+  opacity: 1;
+}
+
+.single-project .onhover .part:nth-child(1) {
+  color: white;
+  font-size: 34px;
+}
+
+.single-project .onhover .part:nth-child(2) {
+  background: transparent;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.single-project .onhover .part:nth-child(2):hover {
+  background: white;
+  border-radius: 5px;
+}
+
+.single-project .onhover .part:nth-child(2) a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px 15px;
+}
+
+.single-project .onhover .part:nth-child(2) a img {
+  width: 30px;
+  margin-right: 10px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%)
+    contrast(103%);
+  transition: all 0.3s;
+}
+
+.single-project .onhover .part:nth-child(2):hover img {
+  filter: invert(17%) sepia(42%) saturate(1516%) hue-rotate(61deg)
+    brightness(99%) contrast(102%);
+}
+
+.single-project .onhover .part:nth-child(2) p {
+  color: white;
+  margin: 0;
+  transition: all 0.3s;
+}
+
+.single-project .onhover .part:nth-child(2):hover p {
+  color: #153e00;
+}
+
+.expertise {
+  margin-top: 100px;
+}
+
+.expertise .skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.single-skill {
+  width: 40%;
+  padding: 15px;
+}
+
+.single-skill h3 {
+  position: relative;
+}
+
+.single-skill p {
+  font-weight: 300;
+}
+
+.single-skill h3::after {
+  content: "• ";
+  position: absolute;
+  left: -15px;
+}
