@@ -332,19 +332,63 @@ a {
   color: #153e00;
 }
 
-.expertise {
+.services {
   margin-top: 100px;
 }
 
-.expertise .skills {
+.services .skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .single-skill {
-  width: 40%;
-  padding: 15px;
+  width: 48%;
+  padding: 5px 35px;
+  border: 1px solid black;
+  margin-bottom: 25px;
+  background: white;
+  transition: background 0.7s, color 0.7s;
+  /* cursor: pointer; */
+  position: relative;
+}
+
+.single-skill:hover {
+  background: black;
+  color: white;
+}
+
+.single-skill .cta {
+  width: fit-content;
+    background: #153e00;
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    z-index: 4;
+    border-radius: 50%;
+    opacity: 0;
+    transition-duration: 0.7s;
+    transition-delay: 0.1s;
+  }
+
+  .single-skill:hover .cta {
+    opacity: 1;
+    transition-delay: 1s;
+  }
+  
+.single-skill .cta a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.single-skill .cta img {
+  width: 20px;
+  height: 20px;
+  filter: invert(93%) sepia(79%) saturate(101%) hue-rotate(284deg) brightness(111%) contrast(101%);
 }
 
 .single-skill h3 {
@@ -359,4 +403,61 @@ a {
   content: "• ";
   position: absolute;
   left: -15px;
+}
+
+.contactus {
+  margin-top: 100px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+form input,
+form textarea {
+  font-family: "Labil Grotesk";
+  border: 1px solid black;
+  padding-inline: 20px;
+}
+
+form input {
+  height: 55px;
+  outline: none;
+  margin-bottom: 15px;
+}
+
+form textarea {
+  outline: none;
+  padding-top: 15px;
+}
+
+form input:nth-child(1),
+form input:nth-child(2) {
+  width: calc(50% - 10px );
+}
+
+form input:nth-child(3),
+form textarea {
+  width: 100%;
+}
+
+#submit {
+  background: black;
+  color: white;
+  padding: 10px 20px;
+  font-family: "Labil Grotesk";
+  font-weight: 500;
+  border: 3px solid black;
+  cursor: pointer;
+  width: 100%;
+  margin-block: 30px;
+  transition: all 0.7s;
+}
+
+#submit:hover {
+  background: white;
+  border: 3px solid #153e00;
+  color: #153e00;
 }
