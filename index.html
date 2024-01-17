@@ -4,13 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Younis</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="shortcut icon" href="./img/favicon-04.png" type="image/x-icon" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <div class="page-container">
       <div id="header">
-        <a class="logo" href="/">
+        <a class="logo" href="#">
           <img src="./img/logo-black.png" alt="Younis Logo" />
         </a>
         <div class="navbar">
@@ -73,10 +74,10 @@
                 <div class="technologies"></div>
               </div>
               <div class="part">
-                <a href="https://petitbebe.store/" target="_blank"
-                  ><img src="./img/view.svg" alt="" />
-                  <p>See Project</p></a
-                >
+                  <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#petitbebe">
+                    <img src="./img/view.svg" alt="" />
+                  <p>See Project</p>
+                  </button>
               </div>
             </div>
           </div>
@@ -88,10 +89,10 @@
                 <div class="technologies"></div>
               </div>
               <div class="part">
-                <a href="#" target="_blank"
-                  ><img src="./img/view.svg" alt="" />
-                  <p>See Project</p></a
-                >
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#xlgate">
+                  <img src="./img/view.svg" alt="" />
+                <p>See Project</p>
+                </button>
               </div>
             </div>
           </div>
@@ -103,10 +104,10 @@
                 <div class="technologies"></div>
               </div>
               <div class="part">
-                <a href="https://liftup-uae.com/" target="_blank"
-                  ><img src="./img/view.svg" alt="" />
-                  <p>See Project</p></a
-                >
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#liftup">
+                  <img src="./img/view.svg" alt="" />
+                <p>See Project</p>
+                </button>
               </div>
             </div>
           </div>
@@ -118,10 +119,29 @@
                 <div class="technologies"></div>
               </div>
               <div class="part">
-                <a href="#" target="_blank"
-                  ><img src="./img/view.svg" alt="" />
-                  <p>See Project</p></a
-                >
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hilti">
+                  <img src="./img/view.svg" alt="" />
+                <p>See Project</p>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modals">
+          <div class="modal fade" id="petitbebe" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Modal title</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
               </div>
             </div>
           </div>
@@ -193,6 +213,9 @@
         </form>
       </div>
 
+      
+      
+
       <div class="socket">
         <p>
           2024© - Made by Mohamed Younis
@@ -200,7 +223,7 @@
       </div>
     </div>
 
-    
+    <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="./js/script.js"></script>

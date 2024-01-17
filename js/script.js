@@ -28,3 +28,17 @@ contactForm[0].addEventListener("submit", (e) => {
   e.preventDefault();
   sendEmail();
 });
+
+var serviceCta = document.querySelectorAll(".single-skill .cta");
+
+console.log(serviceCta);
+
+serviceCta[0].addEventListener("click", () => {
+  subject.value = "Web Development - ";
+});
+serviceCta[1].addEventListener("click", () => {
+  subject.value = "UI UX - ";
+});
+serviceCta[2].addEventListener("click", () => {
+  subject.value = "SEO - ";
+});
