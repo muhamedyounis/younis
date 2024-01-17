@@ -461,3 +461,11 @@ form textarea {
   border: 3px solid #153e00;
   color: #153e00;
 }
+
+.socket {
+  margin-top: 100px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 300;
+  padding-block: 15px;
+}
