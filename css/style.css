@@ -375,15 +375,16 @@ a {
   filter: invert(93%) sepia(79%) saturate(101%) hue-rotate(284deg) brightness(111%) contrast(101%);
 }
 
-.single-skill h3 {
+.single-skill h5 {
   position: relative;
+  margin-block: 1rem;
 }
 
 .single-skill p {
   font-weight: 300;
 }
 
-.single-skill h3::after {
+.single-skill h5::after {
   content: "• ";
   position: absolute;
   left: -15px;
@@ -393,39 +394,6 @@ a {
   margin-top: 100px;
 }
 
-form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-form input,
-form textarea {
-  font-family: "Labil Grotesk";
-  border: 1px solid black;
-  padding-inline: 20px;
-}
-
-form input {
-  height: 55px;
-  outline: none;
-  margin-bottom: 15px;
-}
-
-form textarea {
-  outline: none;
-  padding-top: 15px;
-}
-
-form input:nth-child(1),
-form input:nth-child(2) {
-  width: calc(50% - 10px );
-}
-
-form input:nth-child(3),
-form textarea {
-  width: 100%;
-}
 
 #submit {
   background: black;
