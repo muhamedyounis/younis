@@ -1,3 +1,10 @@
+/* Variables - START */
+:root {
+  --black: #212529;
+}
+
+/* Variables - END */
+
 /* Fonts - START */
 
 @font-face {
@@ -64,7 +71,7 @@ a {
   display: flex;
   flex-direction: row;
   border-radius: 50px;
-  background: black;
+  background: var(--black);
 }
 
 .navbar ul li a {
@@ -87,13 +94,13 @@ a {
 .navbar a.active {
   border-radius: 50px;
   background: white;
-  color: black;
+  color: var(--black);
 }
 
 .navbar .count {
   padding: 4px 4px 6px 4px;
   background: #c4c4c4;
-  color: black;
+  color: var(--black);
   font-size: 12px;
   border-radius: 50%;
   transition: all 0.5s;
@@ -104,7 +111,7 @@ a {
   width: fit-content;
   margin: 100px auto 100px 0;
   text-align: left;
-  font-size: 130px;
+  font-size: 5rem;
   line-height: 0.8;
 }
 
@@ -113,13 +120,41 @@ a {
   margin-inline: auto;
 }
 
+@media screen and (max-width: 768px) {
+  .page-container {
+    width: 95% !important;
+  }
+  .navbar ul li a {
+    padding: 5px 15px !important;
+  }
+  .hero-section .scroll p {
+    font-size: 14px !important;
+  }
+  .hero-section .scroll img {
+    width: 15px !important;
+    height: 15px !important;
+  }
+  .hero-section .scroll {
+    padding: 10px !important;
+    bottom: -10px !important;
+  }
+  .hero-section .bottom {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+    row-gap: 30px !important;
+  }
+  .hero-section .bottom .part:nth-child(2) {
+    width: 100% !important;
+  }
+}
+
 .hero-section .top {
   position: relative;
 }
 
 .hero-section .scroll {
   text-transform: uppercase;
-  color: black;
+  color: var(--black);
   position: absolute;
   right: 0;
   bottom: -30px;
@@ -182,6 +217,7 @@ a {
   flex-direction: row;
   position: relative;
   overflow: hidden;
+  color: var(--black);
 }
 
 .hero-section .bottom .part:nth-child(1) a img {
@@ -199,7 +235,7 @@ a {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
-  color: black;
+  color: var(--black);
   margin-left: 0;
   transition: all 0.3s;
 }
@@ -210,6 +246,7 @@ a {
 
 .hero-section .bottom .part:nth-child(2) {
   width: 40%;
+  color: var(--black);
 }
 
 .hero-section .bottom .part:nth-child(2) span {
@@ -220,12 +257,9 @@ a {
   margin-top: 100px;
 }
 
-.projects .heading {
-  width: 40%;
-}
-
 .projects .heading p {
   font-weight: 300;
+  color: var(--black);
 }
 
 .projects-grid {
@@ -249,7 +283,7 @@ a {
   inset: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, black 0%, transparent 100%);
+  background: linear-gradient(to top, var(--black) 0%, transparent 100%);
   opacity: 0;
   transition: all 1.5s;
 }
@@ -326,9 +360,8 @@ a {
 }
 
 .single-skill {
-  width: 48%;
   padding: 5px 35px;
-  border: 1px solid black;
+  border: 1px solid var(--black);
   margin-bottom: 25px;
   background: white;
   transition: background 0.7s, color 0.7s;
@@ -337,28 +370,32 @@ a {
 }
 
 .single-skill:hover {
-  background: black;
+  background: var(--black);
+  color: white;
+}
+
+.single-skill:hover h5 {
   color: white;
 }
 
 .single-skill .cta {
   width: fit-content;
-    background: #153e00;
-    position: absolute;
-    right: 10px;
-    bottom: -15px;
-    z-index: 4;
-    border-radius: 50%;
-    opacity: 0;
-    transition-duration: 0.7s;
-    transition-delay: 0.1s;
-  }
+  background: #153e00;
+  position: absolute;
+  right: 10px;
+  bottom: -15px;
+  z-index: 4;
+  border-radius: 50%;
+  opacity: 0;
+  transition-duration: 0.7s;
+  transition-delay: 0.1s;
+}
 
-  .single-skill:hover .cta {
-    opacity: 1;
-    transition-delay: 1s;
-  }
-  
+.single-skill:hover .cta {
+  opacity: 1;
+  transition-delay: 1s;
+}
+
 .single-skill .cta a {
   width: 40px;
   height: 40px;
@@ -372,12 +409,15 @@ a {
   pointer-events: none;
   width: 20px;
   height: 20px;
-  filter: invert(93%) sepia(79%) saturate(101%) hue-rotate(284deg) brightness(111%) contrast(101%);
+  filter: invert(93%) sepia(79%) saturate(101%) hue-rotate(284deg)
+    brightness(111%) contrast(101%);
 }
 
 .single-skill h5 {
   position: relative;
   margin-block: 1rem;
+  color: var(--black);
+  transition: all 0.7s;
 }
 
 .single-skill p {
@@ -394,30 +434,14 @@ a {
   margin-top: 100px;
 }
 
-
-#submit {
-  background: black;
-  color: white;
-  padding: 10px 20px;
-  font-family: "Labil Grotesk";
-  font-weight: 500;
-  border: 3px solid black;
-  cursor: pointer;
-  width: 100%;
-  margin-block: 30px;
-  transition: all 0.7s;
-}
-
-#submit:hover {
-  background: white;
-  border: 3px solid #153e00;
-  color: #153e00;
-}
-
 .socket {
   margin-top: 100px;
   text-align: center;
   font-size: 14px;
   font-weight: 300;
   padding-block: 15px;
+}
+
+h2 {
+  color: var(--black);
 }

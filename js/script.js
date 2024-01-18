@@ -5,6 +5,32 @@ var message = document.getElementById("message");
 var submitBtn = document.getElementById("submit");
 var contactForm = document.getElementsByTagName("form");
 
+function clearInputs() {
+  userName.value = "";
+  email.value = "";
+  subject.value = "";
+  message.value = "";
+  userName.classList.remove("is-valid");
+  email.classList.remove("is-valid");
+  subject.classList.remove("is-valid");
+  message.classList.remove("is-valid");
+}
+
+function successAlert() {
+  Swal.fire({
+    title: "Good job!",
+    text: "Email sent successfully",
+    icon: "success",
+  });
+}
+function failedAlert() {
+  Swal.fire({
+    title: "Message not sent",
+    text: "You have to enter proper data to send the mail",
+    icon: "error",
+  });
+}
+
 function sendEmail() {
   const messageBody = ` Name: ${userName.value} <br/> Email: ${email.value} <br/> Subject: ${subject.value} <br/> Message: ${message.value} `;
   Email.send({
@@ -16,21 +42,20 @@ function sendEmail() {
     Subject: subject.value,
     Body: messageBody,
   }).then((message) => {
-    if (message == "OK")
-      Swal.fire({
-        title: "Good job!",
-        text: "You clicked the button!",
-        icon: "success",
-      });
+    console.log(message);
+    if (message == "OK") {
+      successAlert();
+      clearInputs();
+    }
   });
 }
 
 var nameRegex = /^[a-z ,.'-]+$/i;
 var emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 var subjectRegex = /^[a-z ,.'-]+$/i;
-var messageRegex = /^[a-z ,.'-0123456789]+$/;
+var messageRegex = /^[A-Z a-z ,.'-0123456789]+$/;
 
-userName.addEventListener("keyup", () => {
+userName.addEventListener("change", () => {
   if (nameRegex.test(userName.value)) {
     userName.classList.remove("is-invalid");
     userName.classList.add("is-valid");
@@ -40,7 +65,7 @@ userName.addEventListener("keyup", () => {
   }
 });
 
-email.addEventListener("keyup", () => {
+email.addEventListener("change", () => {
   if (emailRegex.test(email.value)) {
     email.classList.remove("is-invalid");
     email.classList.add("is-valid");
@@ -50,7 +75,7 @@ email.addEventListener("keyup", () => {
   }
 });
 
-subject.addEventListener("keyup", () => {
+subject.addEventListener("change", () => {
   if (subjectRegex.test(subject.value)) {
     subject.classList.remove("is-invalid");
     subject.classList.add("is-valid");
@@ -60,7 +85,7 @@ subject.addEventListener("keyup", () => {
   }
 });
 
-message.addEventListener("keyup", () => {
+message.addEventListener("change", () => {
   if (messageRegex.test(message.value)) {
     message.classList.remove("is-invalid");
     message.classList.add("is-valid");
@@ -72,19 +97,26 @@ message.addEventListener("keyup", () => {
 
 contactForm[0].addEventListener("submit", (e) => {
   e.preventDefault();
-  // if () {
-  //   sendEmail();
-  // }
+  if (
+    userName.classList.contains("is-valid") &&
+    email.classList.contains("is-valid") &&
+    subject.classList.contains("is-valid") &&
+    message.classList.contains("is-valid")
+  ) {
+    sendEmail();
+  } else {
+    failedAlert();
+  }
 });
 
 var serviceCta = document.querySelectorAll(".single-skill .cta");
 
 serviceCta[0].addEventListener("click", () => {
-  subject.value = "Web Development - ";
+  subject.value = "Web Development - ...";
 });
 serviceCta[1].addEventListener("click", () => {
-  subject.value = "UI UX - ";
+  subject.value = "UI UX - ...";
 });
 serviceCta[2].addEventListener("click", () => {
-  subject.value = "SEO - ";
+  subject.value = "SEO - ...";
 });
