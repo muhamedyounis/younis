@@ -448,3 +448,8 @@ a {
 h2 {
   color: var(--black);
 }
+
+.modal-body .page-title {
+  font-size: 18px;
+  color: #031633;
+}
