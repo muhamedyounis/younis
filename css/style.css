@@ -111,7 +111,7 @@ a {
   width: fit-content;
   margin: 100px auto 100px 0;
   text-align: left;
-  font-size: 5rem;
+  font-size: 120px;
   line-height: 0.8;
 }
 
@@ -121,6 +121,9 @@ a {
 }
 
 @media screen and (max-width: 768px) {
+  .hero-section h2 {
+    font-size: 4.5rem;
+  }
   .page-container {
     width: 95% !important;
   }
