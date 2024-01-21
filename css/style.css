@@ -453,3 +453,10 @@ h2 {
   font-size: 18px;
   color: #031633;
 }
+
+.techs-used .icons img {
+  max-width: 25px;
+  padding: 5px;
+  background: grey;
+  border-radius: 50%;
+}
