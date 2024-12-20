@@ -112,21 +112,21 @@ contactForm[0].addEventListener("submit", (e) => {
 var serviceCta = document.querySelectorAll(".single-skill .cta");
 
 serviceCta[0].addEventListener("click", () => {
-  subject.value = "Web Development - ...";
+  subject.value = "Web Development";
   if (subject.classList.contains("is-valid")) {
   } else {
     subject.classList.add("is-valid");
   }
 });
 serviceCta[1].addEventListener("click", () => {
-  subject.value = "UI UX - ...";
+  subject.value = "UI/UX";
   if (subject.classList.contains("is-valid")) {
   } else {
     subject.classList.add("is-valid");
   }
 });
 serviceCta[2].addEventListener("click", () => {
-  subject.value = "SEO - ...";
+  subject.value = "SEO";
   if (subject.classList.contains("is-valid")) {
   } else {
     subject.classList.add("is-valid");
